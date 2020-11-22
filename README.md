@@ -2,10 +2,6 @@
 
 [![Build Status](https://travis-ci.org/idealista/coding-test-ranking.svg?branch=master)](https://travis-ci.org/idealista/coding-test-ranking)
 
-Este repositorio contiene un API parcialmente desarrollada para desarrollar un servicio que se encargue de medir la calidad de los anuncios. Tu objetivo será implementar las historias de usuario que se describen más adelante.
-
-Los supuestos están basados en un hipotético *equipo de gestión de calidad de los anuncios*, que demanda una serie de verificaciones automáticas para clasificar los anuncios en base a una serie de características concretas.
-
 ## Historias de usuario
 
 * Yo, como encargado del equipo de gestión de calidad de los anuncios quiero asignar una puntuación a un anuncio para que los usuarios de idealista puedan ordenar anuncios de más completos a menos completos. La puntuación del anuncio es un valor entre 0 y 100 que se calcula teniendo encuenta las siguientes reglas:
@@ -21,21 +17,11 @@ Los supuestos están basados en un hipotético *equipo de gestión de calidad de
 
 * Yo como usuario de idealista quiero poder ver los anuncios ordenados de mejor a peor para encontrar fácilmente mi vivienda.
 
-## Consideraciones importantes
+### Endpoints
 
-En este proyecto te proporcionamos un pequeño *esqueleto* escrito en Java usando [Spring Boot](https://spring.io/projects/spring-boot).
-
-En dicho *esqueleto* hemos dejado para que completes un [Controller](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/stereotype/Controller.html) y un [Repository](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/stereotype/Repository.html) en memoria. Puedes crear las clases y métodos que consideres necesarios.
-
-Podrás ejecutar el proyecto usando Maven ejecutando el siguiente comando en la carpeta donde esté el fichero `pom.xml`:
-
-```bash
-$ mvn spring-boot:run
-```
-
-**La persistencia de datos no forma parte del objetivo del reto**. Si no vas a usar el esqueleto que te proporcionamos, te sugerimos que la simplifiques tanto como puedas (con una base de datos embebida, "persistiendo" los objetos en memoria, usando un fichero...). **El diseño de una interfaz gráfica tampoco** forma parte del alcance del reto, por tanto no es necesario que la implementes.
-
-**Nota:** No estás obligado a usar el proyecto proporcionado. Si lo prefieres, puedes usar cualquier otro lenguaje, framework y/o librería. Incluso puedes prescindir de estos últimos si consideras que no son necesarios. A lo que más importancia damos es a tener un código limpio y de calidad.
+* /ads => muestra los anuncios para el usuario
+* /admin/ads => muestra los anuncios para el administrador
+* /admin/ads/score => calcula las puntaciones de todos los anuncios
 
 ### Requisitos mínimos
 
@@ -45,9 +31,3 @@ A continuación se enumeran los requisitos mínimos para ejecutar el proyecto:
 * Apache Maven 3.6.x
 
 Otras versiones pueden funcionar, pero no han sido probadas y pueden presentar errores.
-
-## Criterios de aceptación
-
-* El código debe compilar y ser ejecutable :dancer:
-
-* Debes proporcionar 3 endpoints: Uno para calcular la puntuación de todos los anuncios, otro para listar los anuncios para un usuario de idealista y otro para listar los anuncios para el responsable de del departamento de gestión de calidad.
