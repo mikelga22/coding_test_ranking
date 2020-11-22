@@ -30,7 +30,7 @@ public class InMemoryPersistence {
 
     public List<RelevantAd> getRelevantAds() {
         return ads.stream().filter(ad -> ad.getScore() > 40)
-                .sorted(Comparator.comparing(FullAd::getScore))
+                .sorted(Comparator.comparing(FullAd::getScore).reversed())
                 .map(Cast::toRelevantAd)
                 .collect(Collectors.toList());
     }
